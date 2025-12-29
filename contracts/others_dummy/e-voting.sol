@@ -1,7 +1,9 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.8.2 <0.9.0;
 
-contract Voting {
+import {VoteToken} from "./voteToken.sol";
+
+contract Voting1 {
     enum ElectionPhases {candidateRegistrationPhase, voterRegistrationPhase, votingPhase, endedPhase, resultsPhase}
 
     struct Candidate {
@@ -10,6 +12,7 @@ contract Voting {
         bool candidateAdded;
     }
     address public admin;
+    VoteToken public voteToken;
     address[] public candidatesList;
     address[] public votersList;
     mapping(address => Candidate) public candidates;
@@ -31,8 +34,9 @@ contract Voting {
     event votingPhaseEnded();
     event resultsPhase(string winner);
 
-    constructor(uint _candidateRegistrationPeriod, uint _voterRegistrationPeriod, uint _votingPeriod) {
+    constructor(uint _candidateRegistrationPeriod, uint _voterRegistrationPeriod, uint _votingPeriod, address _voteToken) {
         admin = msg.sender;
+        voteToken = VoteToken(_voteToken);
         candidateRegistrationPeriod = _candidateRegistrationPeriod;
         voterRegistrationPeriod = _voterRegistrationPeriod;
         votingPeriod = _votingPeriod;
