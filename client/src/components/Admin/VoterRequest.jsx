@@ -41,7 +41,7 @@ const VoterRequest = () => {
 
     return (
         <div className="voter-requests">
-            <h4>Pending Voter Requests</h4>
+            <h4 >Pending Voter Requests</h4>
             {pendingVoters.length === 0 ? (
                 <p>No pending voter requests</p>
             ) : (

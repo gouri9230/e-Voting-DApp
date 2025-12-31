@@ -34,16 +34,13 @@ const RegisterVoter = () => {
     };
 
     return (
-        <>
-            {isApproved ? (
-                <p>You are approved to vote!</p>
-            ) : isRequested ? (
-                <p>Pending admin approval...</p>
-            ) : (
-                <button className="btn btn-primary" onClick={requestRegistration} disabled={currentPhase===2}>
-                    Request to Vote
-                </button>
-            )}
+        <> <h4>Request to Vote</h4>
+        <button className="btn btn-primary" onClick={requestRegistration}>
+                    Request
+        </button>
+        {isApproved ? (<p>You are approved to vote!</p>) : 
+        isRequested ? (<p>Pending admin approval...</p>) : 
+        (<p>Request</p>    )}
         </>
     );
 };

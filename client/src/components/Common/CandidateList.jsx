@@ -19,9 +19,10 @@ const CandidateList = () => {
     
     return (
         <>
-        <h4>Candidates List</h4>
-        {candidates.length === 0 ? (<p>No candidates registered yet!</p>) : 
-            (<><table>
+        <div className="candidate-container">
+            <h4 className="candidate-title">Candidates List</h4>
+        {candidates.length === 0 ? (<p className="empty-state">No candidates registered yet!</p>) : 
+            (<><table className="candidate-table">
                 <thead>
                     <tr>
                         <th>Candidate Name</th>
@@ -32,14 +33,14 @@ const CandidateList = () => {
                 <tbody>
                 {candidates.map((candidate, idx) => (
                 <tr key={idx}>
-                    <td>{candidate.candidateAddress}</td>
                     <td>{candidate.name}</td>
+                    <td className="address">{candidate.candidateAddress}</td>
                     <td>{candidate.voteCount}</td>
                 </tr>
                 ))}
                 </tbody>
             </table></>)}
-        </>
+        </div></>
     )
 };
 

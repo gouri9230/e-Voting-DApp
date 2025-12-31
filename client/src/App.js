@@ -1,5 +1,4 @@
 import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css";
 import Home from './components/pages/Home';
 import AdminDashboard from './components/pages/AdminDashboard';
 import VoterDashboard from './components/pages/VoterDashboard';

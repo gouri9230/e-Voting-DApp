@@ -45,8 +45,14 @@ const WalletProvider = ({children}) => {
         setSigner(null);
         setAccount(null);
         localStorage.removeItem("account");
-    }
+      }
 
+    useEffect(() => {
+      disconnectWallet();
+    }, []);
+
+    // dependency array-> variables we read inside the effect.
+    // if we are just setting a variable then no need to include
     useEffect(()=>{
         const init = async () => {
             const readOnlyProvider = new ethers.JsonRpcProvider("https://eth-sepolia.g.alchemy.com/v2/tqt_wrhEkMeEFnUjDrXWh");
@@ -81,7 +87,7 @@ const WalletProvider = ({children}) => {
       }
       loadContract();
       // never call methods on nullable state, so always check it like in if statement
-    }, [signer]);
+    }, [signer, admin]); // here we are reading admin & signer so include both.
 
     // event listeners for account changed, network provider changed
     useEffect(() => {

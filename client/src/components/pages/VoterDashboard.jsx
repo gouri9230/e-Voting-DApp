@@ -4,11 +4,9 @@ import VotingPanel from '../Voter/VotingPanel';
 import RegisterVoter from '../Voter/RegisterVoter';
 
 const VoterDashboard = () => {
-    const { account, admin, currentPhase, disconnectWallet } = useWallet();
+    const { account, admin } = useWallet();
     
     return (<>
-        <h1 className='text-center'>Voter Dashboard</h1><hr></hr> 
-        <button className="btn btn-primary" onClick={disconnectWallet}>Disconnect</button><hr></hr>
         <RegisterVoter/><hr></hr>
         {account && (
           <div className="container">

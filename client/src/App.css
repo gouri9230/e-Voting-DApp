@@ -1,44 +1,142 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #2853a9;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: rgb(9, 9, 9);
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+* {
+  margin: 30px;
+  box-sizing: border-box;
 }
 
 html, body, #root {
-  background-color: rgb(49, 47, 47);
-  color: white;
-  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0px;
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+}
+
+#navbar{
+  margin: 0;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background: #3f87a6;
+}
+#nav-items {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  font-weight: bold;
+  font-size: large;
+}
+
+#nav-items a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:hover {
+  padding: 10px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.logo h2:first-child{
+  color: #a20d39;
+  font-style: italic;
+  font-size:larger;
+  font-weight: bold;
+}
+.logo h2:last-child {
+  font-size: 14px;
+  color: #a20d39;
+  opacity: 0.8;
+  font-size:larger;
+  font-weight: bold;
+}
+
+ul li {
+  color: #2f32db;
+}
+
+.candidate-container{
+  max-width: 900px;
+  margin: 20px 0;
+  margin-left: 0px;
+}
+.candidate-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.empty-state{
+  text-align: center;
+  opacity: 0.7;
+}
+.candidate-table tr:nth-child(even){
+  background: #979ebd;
+}
+.candidate-table td {
+  padding: 12px;
+  border-top: 1px solid #334155;
+}
+.candidate-table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.address{
+  font-family: monospace;
+  font-size: 14px;
+  opacity: 0.8;
+  word-break: break-all;
+}
+.header{
+  display: flex;
+  align-items: center;
+  margin-block: 20px;
+}
+.phase{
+  padding: 10px;
+  font-size: 20px;
+  color: #c730bd;
+  font-weight: bold;
+  border: #070708;
+  border-style: dashed;
+  text-align: center;
+  margin-right: 5%;
+}
+
+.election{
+  text-align: center;
+  background-color: #d8d9de;
+}
+
+.wallet {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 16px 20px;
+  background-color: #3ac2c9;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.wallet p {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Wallet address */
+.wallet p:first-child {
+  font-weight: 500;
+  word-break: break-all;
+}
+
+/* Role text */
+.wallet p:last-child {
+  font-weight: 600;
 }
