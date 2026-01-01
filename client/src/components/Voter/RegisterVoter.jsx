@@ -34,14 +34,14 @@ const RegisterVoter = () => {
     };
 
     return (
-        <> <h4>Request to Vote</h4>
+        <div className="request-voter"> <h4 className="header-text">Request to Vote</h4>
         <button className="btn btn-primary" onClick={requestRegistration}>
-                    Request
+            Request
         </button>
         {isApproved ? (<p>You are approved to vote!</p>) : 
         isRequested ? (<p>Pending admin approval...</p>) : 
-        (<p>Request</p>    )}
-        </>
+        (<p>Request</p> )}
+        </div>
     );
 };
 

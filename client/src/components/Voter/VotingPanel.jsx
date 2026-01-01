@@ -40,13 +40,14 @@ const VotingPanel = () => {
         fetchData();
     }, [contract, account]);
 
-    return (<><h3>Give your Vote here</h3>
-    <form onSubmit={Vote}> 
-        <label>Enter Candidate name:</label><br></br>
-        <input type="text" placeholder="candidate name" ref={candidateRef}></input><br></br>
+    return (<div className="voting">
+        <h3>Give your Vote here</h3>
+        <form onSubmit={Vote}> 
+        <label>Enter Candidate name:</label>
+        <input type="text" placeholder="candidate name" ref={candidateRef}></input>
         <input type="submit" value={hasVoted ? "Already Voted" : "Vote"} disabled={currentPhase!==1 || hasVoted}></input> 
     </form>
-    </>)
+    </div>)
 }
 
 export default VotingPanel;

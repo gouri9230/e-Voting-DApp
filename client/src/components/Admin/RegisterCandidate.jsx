@@ -22,13 +22,12 @@ const RegisterCandidate = () => {
 
     return (
         <><form onSubmit={register}>
-            <h2>Candidate Registration</h2>
             <div className="form">
+            <h2 className="header-text">Candidate Registration</h2>
                 <label htmlFor ="address">Candidate address: </label>
-                <input type= "text" placeholder="wallet address" ref={addressRef}/>
-                <br/><br/>
+                <input className="input-style" type= "text" placeholder="wallet address" ref={addressRef}/>
                 <label htmlFor="name">Candidate name: </label>
-                <input type= "text" placeholder="name" ref={nameRef}/>
+                <input className="input-style" type= "text" placeholder="name" ref={nameRef}/>
             </div>
             <button type="submit" className="btn btn-primary">Register</button>
         </form>

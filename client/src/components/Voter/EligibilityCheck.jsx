@@ -14,12 +14,13 @@ const EligibilityCheck = () => {
     useEffect(() => {
         VoterEligibility();
     }, [contract, account]);
-    
+
     return (
-        <>  <h4>Check Voting Eligibility</h4>
+        <div className="elegibility">
+          <h3 className="header-text">Check Voting Eligibility</h3>
             <input type="button" onClick={VoterEligibility} value="Check Eligibility"/>
             {voted ? <p>You have already voted!</p> : <p>You are eligible to vote</p>}
-        </>
+        </div>
     )
 }
 

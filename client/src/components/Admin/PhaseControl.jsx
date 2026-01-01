@@ -16,8 +16,10 @@ const PhaseControl = () => {
         alert("Election phase changed!");
     }
 
-    return (<><h4>Change Election Phase</h4>
+    return (<>
         <form onSubmit={ChangePhase}>
+        <div className='phase-control'>
+            <h4 className='header-text'>Change Election Phase</h4>
             <label>Choose phase:</label>
             <select ref={valueRef}>
                 <option value="0">Registration</option>
@@ -25,6 +27,7 @@ const PhaseControl = () => {
                 <option value="2">Ended</option>
             </select>
             <input type="submit" className="btn btn-primary"></input>
+        </div>
         </form>
     </>)
 

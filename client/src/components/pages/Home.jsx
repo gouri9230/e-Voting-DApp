@@ -35,9 +35,11 @@ const Home = () => {
         <h4 style={{color:"black"}}>Current election phase:</h4> 
         <p style={{fontStyle:"italic"}}>{["Registration", "Voting", "Ended"][currentPhase]}</p></div>
         </div>
-        <h3>Election Results</h3>
-        {currentPhase === 2 ? <Results/> : <p>Results will be declared once voting ends.</p>}
-          </>);
+        <span className="election-centered">
+            <h3>Election Results</h3>
+            {currentPhase === 0 || currentPhase === 1 ? <p>Results will be declared once voting ends.</p>: <Results/>}
+        </span>
+        </>);
     }
     // if account connected, & on dashboard page, then show back to home button, & based on the account, show its respective dashboard
     // if on dashboard page, then set it false
@@ -46,18 +48,26 @@ const Home = () => {
                 {!admin ? "Loading..." : admin.toLowerCase() === account.toLowerCase() ? <AdminDashboard/> : <VoterDashboard/>}
           </>);}
     //if account connected but on home page, then set show dashboard to true and give button go to dashboard.
-    return (
-        <><div className="header">
-            <div className="container"><CandidateList /></div>
-            <div className="phase">
+    return (<> 
+    <div className="candidates">
+        <div className="wallet">
+            <p>Wallet Connected: {account}</p>
+            <p>Role: {!admin ? "Loading..." : admin.toLowerCase() === account.toLowerCase() ? "Admin" : "User"}</p>
+        </div>
+        <div className="phase">
             <h4 style={{color:"black"}}>Current election phase:</h4>
-            <p style={{fontStyle:"italic"}}>{["Registration", "Voting", "Ended"][currentPhase]}</p></div>
-           </div> 
-           <span className="election">
-            <h3>Election Results</h3>
-            <Results/>
-            </span>
-        </>
+            <p style={{fontStyle:"italic"}}>{["Registration", "Voting", "Ended"][currentPhase]}</p>
+        </div>
+    </div>
+    <div className="header">
+        <CandidateList />
+        <span className="election">
+            <h4>Election Results</h4>
+            {currentPhase === 0 || currentPhase === 1 ? <p>Results will be declared once voting ends.</p>: <Results/>}
+        </span>
+    </div>
+    
+    </>
     );
 }; 
 
